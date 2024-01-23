@@ -1,8 +1,6 @@
-package S06_Loops.classes;
+package codecademy.loops;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Health {
 

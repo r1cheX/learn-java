@@ -1,4 +1,4 @@
-package s03_ObjectOriented.classes;
+package codecademy.oop;
 
 public class Store {
 

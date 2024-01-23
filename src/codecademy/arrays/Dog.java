@@ -1,4 +1,4 @@
-package s05_ArraysLists.classes;
+package codecademy.arrays;
 
 import java.util.ArrayList;
 import java.util.HashSet;
