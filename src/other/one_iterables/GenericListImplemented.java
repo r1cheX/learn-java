@@ -1,8 +1,6 @@
-package other.collections;
+package other.one_iterables;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 //  ** Metáfora del control remoto
 
@@ -12,7 +10,13 @@ import java.util.List;
 
 //  ** Por eso para resolver de poder iterar sobre una lista sin saber sobre su implementación
 //  ** Debemos implementar el Iterable
-public class GenericList<T> implements Iterable<T> {
+public class GenericListImplemented<T> implements Iterable<T> {
+
+//   * Es Iterable es una interfaz que nos permite que un objeto
+//   * sea utilizado como objetivo en el for-each.
+
+//   * El beneficio de usar un Iterable es poder iterar sobre un
+//   * objeto sin la necesidad de saber  su implementación interna.
 
 //  ** De manera generica si aca se cambia a oto tipo de colección
 //  ** como Set o Queue en items, dara un error en otro lado
@@ -28,6 +32,7 @@ public class GenericList<T> implements Iterable<T> {
     public T get(int index){
         return items[index];
     }
+
 
     @Override
     public Iterator<T> iterator() {
