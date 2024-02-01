@@ -1,9 +1,8 @@
 package codecademy.arrays;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
-public class Dog {
+public class ArrayDemo {
 
 
     public static void main(String[] args) {

@@ -2,13 +2,13 @@ package codecademy.loops;
 
 import java.util.ArrayList;
 
-public class Health {
+public class LoopDemo {
 
     private String name;
     private Integer numberOfNegativeThoughts;
 
 
-    public Health(Integer xd, String a) {
+    public LoopDemo(Integer xd, String a) {
         numberOfNegativeThoughts = xd;
         name = a;
     }
@@ -17,7 +17,7 @@ public class Health {
         for (int i = 0; i < 40; i++) {
             boolean isHealthy = this.numberOfNegativeThoughts.equals(10);
 
-            if (i==20 && isHealthy) {
+            if (i == 20 && isHealthy) {
                 return true;
             }
         }
@@ -26,8 +26,8 @@ public class Health {
     }
 
     public static ArrayList<String> removeAnts(ArrayList<String> lunchBox) {
-        for(int i=0; i < lunchBox.size() ; i++){
-            if(lunchBox.get(i).equals("ant")){
+        for (int i = 0; i < lunchBox.size(); i++) {
+            if (lunchBox.get(i).equals("ant")) {
                 lunchBox.remove(i);
                 i--;
             }
@@ -168,10 +168,9 @@ public class Health {
 
 //      ? El return se saldra del bucle
 
-        Health instanceHealth = new Health(10, "Luis");
+        LoopDemo instanceHealth = new LoopDemo(10, "Luis");
         boolean isHealthy = instanceHealth.verifyMyMentalHealth();
 //        System.out.println("Tu salus mental está: " + (isHealthy ? "Bien" : "Mal"));
-
 
 
 //      ** For-each - Enhanced Loop - Loop Mejorado
@@ -187,14 +186,14 @@ public class Health {
 
 //      ? Example
 
-        ArrayList<Health> listHealth = new ArrayList<Health>();
-        Health element1 = new Health(20, "Pepito");
-        Health element2 = new Health(10, "Carlitos");
+        ArrayList<LoopDemo> listHealth = new ArrayList<LoopDemo>();
+        LoopDemo element1 = new LoopDemo(20, "Pepito");
+        LoopDemo element2 = new LoopDemo(10, "Carlitos");
         listHealth.add(element1);
         listHealth.add(element2);
 
 
-        for( Health itemHealth : listHealth) {
+        for (LoopDemo itemHealth : listHealth) {
             String StatusMentalHealthMessage = itemHealth.verifyMyMentalHealth() ? "Bien" : "Mal";
 //            System.out.println("Me llamo " + itemHealth.name + " y mi salud mental está: " + StatusMentalHealthMessage);
         }
@@ -220,7 +219,6 @@ public class Health {
 
 //      ? Esto es debido a que el ArrayLists el valor donde ocupaba un indice se desplaza
 //      ? a la izquierda lo que haria que disminuya en un indice
-
 
 
 //      ? Example
@@ -257,7 +255,7 @@ public class Health {
 
         while (i < lst.size()) {
             // if value is odd, remove value
-            if (lst.get(i) % 2 != 0){
+            if (lst.get(i) % 2 != 0) {
                 lst.remove(i);
             } else {
                 // if value is even, increment counter
@@ -271,7 +269,7 @@ public class Health {
 //      ? Removiendo con For
 
         for (int j = 0; j < lst.size(); j++) {
-            if (lst.get(j) % 2 != 0){
+            if (lst.get(j) % 2 != 0) {
                 // ! remove value from ArrayList
                 lst.remove(lst.get(j));
                 // ! Decrease loop control variable by 1
