@@ -1,4 +1,4 @@
-package other.two_collections;
+package other.collections;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;

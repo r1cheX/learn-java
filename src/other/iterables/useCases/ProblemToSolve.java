@@ -1,6 +1,6 @@
-package other.one_iterables.useCases;
+package other.iterables.useCases;
 
-import other.one_iterables.GenericList;
+import other.iterables.GenericList;
 
 public class ProblemToSolve {
 

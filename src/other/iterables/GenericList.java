@@ -1,4 +1,4 @@
-package other.one_iterables;
+package other.iterables;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
-package other.one_iterables.useCases;
+package other.iterables.useCases;
 
-import other.one_iterables.GenericListIterator;
+import other.iterables.GenericListIterator;
 
 public class UseCaseGenericListIterator {
 
