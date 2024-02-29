@@ -44,5 +44,8 @@ public class ArrayDemo {
 //      Playing
         String[] list = new String[4];  // Array
         ArrayList<String> list2 = new ArrayList<>(); // ArrayList
+
+
+
     }
 }
