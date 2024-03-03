@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FunctionalProgramming {
 
@@ -54,7 +56,7 @@ public class FunctionalProgramming {
 
 //      * ------------------------------------------------- MODULO 2 -----------------------------------------------------------------------------------------------
 
-//      * 2. Expresiones Lambdas e Interfaces Funcionales
+//      * 2. Expresiones Lambdas, Interfaces Funcionales y Métodos de referencia
 
 //      * Una interfaz es un contrato
 
@@ -111,6 +113,10 @@ public class FunctionalProgramming {
 
 //        System.out.println("El número aleatorio es: " + numeroAleatorio);
 
+//     * Métodos de referencia
+
+//     * TODO: Estudiar métodos de referencia.
+
 //     * ------------------------------------------------- MODULO 3 -----------------------------------------------------------------------------------------------
 
 //     *  3. FUNCIÓN DE ORDEN SUPERIOR Y STREAMS
@@ -134,7 +140,84 @@ public class FunctionalProgramming {
 
 //      * Introducción a Streams
 
-//      *
+//      * Representan secuencias de elementos que pueden ser procesados
+//      * de manera SECUENCIAL o PARALELA.
+
+//      * Secuencial significa que se procesa uno a la vez en un solo
+//      * hilo de ejecución.
+
+//      * Cada operación del Stream espera a que la operación anterior
+//      * termine, antes de comenzar.
+
+//      * Paralela significa que se procesa simultáneamente en varios hilos
+//      * de ejecución
+
+//      * Las operaciones se dividen en subtareas que pueden ejecutarse de manera
+//      * independiente y luego se combinan los resultados.
+
+//      * Un hilo de ejecución se refiere a la secuencia de instrucciones que un
+//      * procesador ejecuta de manera consecutiva.
+
+//      * Un hilo es la unidad más pequeña de ejecución de un programa.
+
+//      * Un proceso es un programa de ejecución. Puede contener uno o varios hilos de ejecución
+
+//      * Un proceso puede tener varios hilos de ejecución y estos comparten el mismo espacio
+//      * de memoria.
+
+//      ? Proporciona operaciones de alto nivel es decir de mayor abstracción, ya que se enfoca en el
+//      ? Qué.
+
+//      ? El cual permite realiazr transformaciones y operaciones en colecciones de manera declarativa.
+
+
+//      ? Características claves es que son perezosas ( Lazy ), es decir las operaciones de Stream no se ejecutan
+//      ? hasta que se llama un método terminal.
+
+//      ? Son INMUTABLES, Los streams no modifican la fuente original de datos.
+
+        List<Integer> numeros = Arrays.asList(1,2,3,4,5,6,7,8,9);
+
+        int sumaNumeros = numeros.stream()
+            .mapToInt(Integer::intValue)
+            .sum();
+
+        System.out.println("La fuente original sigue inmutable: " + numeros);
+        System.out.println("La suma de numeros es: " + sumaNumeros);
+
+
+        List<String> nombres = Arrays.asList("Juan", "María", "Carlos", "Ana");
+
+        Stream<String> nombresStream = nombres.stream();
+
+        List<String> resultadoList = nombres.stream()
+            .filter(nombre -> nombre.startsWith("j"))         //  * Operadores intermedios
+            .map(String::toUpperCase)                        //  * Operadores intermedios
+            .collect(Collectors.toList());                  //  * Operadores terminales
+
+        System.out.println("El resultado de la lista es: " + resultadoList);
+
+//      * Las operacions intermedias más comunes son filter(), map(), sortes() y distinct()
+
+//      * Las operaciones terminales más comunes son forEach(), count(), sum(), min(), max()
+//      * y collect
+
+
+//      * Operaciones basicas con Streams
+
+//      * filter: filtrar los elementos
+
+//      * map: Transforma cada elemento aplicando una función
+
+//      * forEach: Itera sobre elementos, ejecuta una acción para cada elemento del foreach
+
+//      * TODO: Practicar con más ejercicicios de amigos code
+
+//      * TODO: Realizar arriba los metodos de referencia
+
+
+
+
 
 
     }
