@@ -49,10 +49,10 @@ public class FunctionalProgramming {
         Integer resultadoSuma = sumar(2, 3);
         Integer resultadoMultiplicacion = multiplicarPorDos.apply(4);
 
-//        Integer totalSumando = sumarConTotal(10);
+        Integer totalSumando = sumarConTotal(10);
 
-//        System.out.println("El resultado de la suma y multiplicación es: " + resultadoSuma + " y " + resultadoMultiplicacion);
-//        System.out.println("El resultado del incremento del total es: " + totalSumando);
+        System.out.println("El resultado de la suma y multiplicación es: " + resultadoSuma + " y " + resultadoMultiplicacion);
+        System.out.println("El resultado del incremento del total es: " + totalSumando);
 
 //      * ------------------------------------------------- MODULO 2 -----------------------------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ public class FunctionalProgramming {
         OperacionMatematica operacionMatematicaLambda = (num1, num2) -> num1 * num2;
 
         int resultado = operacionMatematicaLambda.calcular(10, 6);
-//        System.out.println("El resultado es: " + resultado);
+        System.out.println("El resultado es: " + resultado);
 
 //      * Interfaces Funcionales
 
@@ -79,10 +79,10 @@ public class FunctionalProgramming {
 
         Function<List<Integer>, Integer> longitud = List::size;
 
-//        System.out.println("El cuadrado de 5 es: " + square.apply(5));
+        System.out.println("El cuadrado de 5 es: " + square.apply(5));
 
         List<Integer> listNumbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 78);
-//        System.out.println("La longitud del arreglo es: " + longitud.apply(listNumbers));
+        System.out.println("La longitud del arreglo es: " + longitud.apply(listNumbers));
 
 //      ? Predicate: Representa una condición que evalúa un valor booleano
 
@@ -92,9 +92,9 @@ public class FunctionalProgramming {
 
         Predicate<List<Integer>> esVacia = List::isEmpty;
 
-//        System.out.println("El numero 5 es" + (esPar.test(5) ? " par" : " impar"));
+        System.out.println("El numero 5 es" + (esPar.test(5) ? " par" : " impar"));
 
-//        System.out.println("La siguiente lista está: " + (esVacia.test(listNumbers) ? " vacía" : " llena"));
+        System.out.println("La siguiente lista está: " + (esVacia.test(listNumbers) ? " vacía" : " llena"));
 
 //      ? Consumer: Representa una operación que acepta un argumento y no
 //      ? produce un resultado
@@ -103,7 +103,7 @@ public class FunctionalProgramming {
 
         Consumer<String> imprimirMensaje = System.out::println;
 
-//        imprimirMensaje.accept("Hola a todos xd");
+        imprimirMensaje.accept("Hola a todos xd");
 
 //      ? Supplier: Representa una operación que no tiene argumentos y no produce resultado
 
@@ -111,11 +111,33 @@ public class FunctionalProgramming {
 
         int numeroAleatorio = generadorAleatorio.get();
 
-//        System.out.println("El número aleatorio es: " + numeroAleatorio);
+        System.out.println("El número aleatorio es: " + numeroAleatorio);
 
 //     * Métodos de referencia
 
-//     * TODO: Estudiar métodos de referencia.
+//     * Proporciona una forma más concisa y legible para expresar tipos comunes
+
+//     * de EXPRESIONES LAMBDAS.
+
+//     * El cual hace referencia a un método.
+
+//     * Los tipos es que pueden hacer referencia a un:
+
+//      * Método estático
+//      * Método de instancia de objeto.
+//      * Referencia a un constructor --> ClassName::new
+
+        List<String> namesOfDogs = List.of("Canela", "Negrita", "Peladita");
+
+
+        Consumer<String> referenceMethod = System.out::print;
+        namesOfDogs.stream().map(name -> name.concat("\n")).forEach(referenceMethod);
+
+
+//      Equivale a:
+        Consumer<String> lambdaExpressionThatReferenceMethodReplace = name -> System.out.println(name);
+        namesOfDogs.stream().map(name -> name.concat("\n")).forEach(lambdaExpressionThatReferenceMethodReplace);
+
 
 //     * ------------------------------------------------- MODULO 3 -----------------------------------------------------------------------------------------------
 
@@ -190,6 +212,10 @@ public class FunctionalProgramming {
 
         Stream<String> nombresStream = nombres.stream();
 
+//      ? El Collect sirve para proporcionar un conjunto de operaciones
+//      ? que se pueden utilizar con las API de Streams para ACUMULAR
+//      ? ELEMENTOS de un FLUJO en una colección.
+
         List<String> resultadoList = nombres.stream()
             .filter(nombre -> nombre.startsWith("j"))         //  * Operadores intermedios
             .map(String::toUpperCase)                        //  * Operadores intermedios
@@ -202,18 +228,9 @@ public class FunctionalProgramming {
 //      * Las operaciones terminales más comunes son forEach(), count(), sum(), min(), max()
 //      * y collect
 
+//      * Ver Ejercicios de tu reporsitorio que has hecho forked de amigos code.
 
-//      * Operaciones basicas con Streams
 
-//      * filter: filtrar los elementos
-
-//      * map: Transforma cada elemento aplicando una función
-
-//      * forEach: Itera sobre elementos, ejecuta una acción para cada elemento del foreach
-
-//      * TODO: Practicar con más ejercicicios de amigos code
-
-//      * TODO: Realizar arriba los metodos de referencia
 
 
 
