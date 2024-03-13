@@ -230,12 +230,5 @@ public class FunctionalProgramming {
 
 //      * Ver Ejercicios de tu reporsitorio que has hecho forked de amigos code.
 
-
-
-
-
-
-
-
     }
 }
